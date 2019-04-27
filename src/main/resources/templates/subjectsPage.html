@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Welcome Page</title>
+<link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+	<header>
+		<a th:href="@{/}">Kurs</a>
+		<a th:href=@{/tests}>Tests</a>
+	</header>
+
+	<main id="testsMain">
+			<div class="container">
+				<h1>Choose the subject</h1>
+				<div class="section" th:each="subject : ${subjects}">
+					<h1><a th:href="@{'/quiz/' + ${subject.id} }" th:text="${subject.name}"></a></h1>
+				</div>
+			</div>
+		</main>
+
+	<footer>
+		<p>Created By Orakbaev Zhanbolat</p>
+	</footer>
+</body>
+</html>

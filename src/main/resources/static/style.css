@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+* {
+    margin: 0 0 0 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 100px;
+    padding-left: 10px;
+}
+
+header form {
+    padding-top: 50px;
+}
+
+header form input {
+    width: 350px;
+    height: 20px;
+}
+
+header form button {
+    height: 28px;
+    background-color: #000;
+    border: none;
+    color: #fff;
+}
+
+header nav {
+    font-size: 40px;
+    padding-top: 35px;
+    padding-right: 15px;
+}
+
+header nav a {
+    font-size: 40px;
+}
+
+main {
+    height: 800px;
+    background-color: #ff8080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .container {
+    height: 600px;
+    width: 75%;
+    background-color: #fff;
+}
+
+#indexMain .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .container h1 {
+    font-size: 60px;
+}
+
+main .container p {
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+#testsMain .container {
+    height: 100%;
+}
+
+#testsMain .container h1 {
+    text-align: center;
+    margin: 10px 0 20px 0;
+}
+
+#testsMain .container .section {
+    border: #000 3px solid;
+    width: 80%;
+    margin-left: 10%; 
+    margin-bottom: 30px;
+}
+
+#testsMain .container .section h1 {
+    text-align: center;
+    font-size: 500%;
+}
+
+#testsMain .container .section h1 a {
+    text-decoration: none;
+    color: black;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    height: 200px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav a:hover {
+    border-bottom: 1px #ff8533 solid;
+}
+
+header form button:hover {
+    background-color: #fff;
+    color: #000;
+    border-radius: 10%;
+}
+
+#testsMain .container .section h1 a:hover {
+    color: #ff8533;
+}
