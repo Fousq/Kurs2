@@ -9,7 +9,9 @@
 <body>
 	<header>
 		<a th:href="@{/}">Kurs</a>
-		<a th:href=@{/tests}>Tests</a>
+		<nav>
+			<a href="#" th:text="${user.username}"></a>
+		</nav>
 	</header>
 
 	<main id="testsMain">

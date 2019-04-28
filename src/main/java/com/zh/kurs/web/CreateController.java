@@ -47,6 +47,11 @@ public class CreateController {
 		return new CreationForm();
 	}
 	
+	@ModelAttribute(name="user")
+	public User user(@AuthenticationPrincipal User user) {
+		return user;
+	}
+	
 	@GetMapping
 	public String showCreatePage(@AuthenticationPrincipal User user,
 			Model model) {
@@ -72,6 +77,9 @@ public class CreateController {
 		Question question = form.getQuestion();
 		questionRepo.save(question);
 		for (String variant : form.getVariants()) {
+			if (variant.isEmpty()) {
+				continue;
+			}
 			System.out.println(variant +  ": " + ( variant.equals( form.getRightAnswer() ) ) );
 			if (variant.equals( form.getRightAnswer() ) ) {
 				variantRepo.save(new Variant(variant, true, question));

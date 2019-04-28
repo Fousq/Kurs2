@@ -9,7 +9,12 @@
 <body>
 	<header>
 		<a th:href="@{/}">Kurs</a>
-		<a th:href=@{/tests}>Tests</a>
+		<nav>
+			<a href="#" th:text="${user.username}"></a>
+			<form th:action="@{/logout}" method="post" >
+				<input type="submit" value="Log out" />
+			</form>
+		</nav>
 	</header>
 
 	<main id="testsMain">

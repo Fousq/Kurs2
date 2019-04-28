@@ -9,8 +9,18 @@
 <body>
 	<header>
 		<a th:href="@{/}">Kurs</a>
-		<a th:href=@{/tests}>Tests</a>
-		<h1 th:if="${user != null}" th:text="${user.username}"></h1>
+		<nav th:if="${user == null}">
+			<a th:href="@{/login}">Log in</a>
+			<a th:href="@{/register}">Sign up</a>
+		</nav>
+		<nav th:if="${user != null}">
+			<a href="#" th:text="${user.username}"></a>
+			<a th:if="${user.isTeacher()}" th:href="@{/create}">Create</a>
+			<a th:if="${!user.isTeacher()}" th:href="@{/tests}">Tests</a>
+			<form th:action="@{/logout}" method="post" >
+				<input type="submit" value="Log out" />
+			</form>
+		</nav>
 	</header>
 
 	<main id="indexMain">

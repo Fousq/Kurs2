@@ -59,6 +59,11 @@ public class QuizController {
 		return subjectRepo.findById(subject_id).get();
 	}
 	
+	@ModelAttribute(name="user")
+	public User user(@AuthenticationPrincipal User user) {
+		return user;
+	}
+	
 	@GetMapping("/{subject_id}")
 	public String showQuizPage(@PathVariable("subject_id") Long subject_id,
 			Model model) {
@@ -89,6 +94,11 @@ public class QuizController {
 		}
 		Integer score = countRightAnswers(userVariants);
 		resultRepo.save(new Result(score, user, subject));
+		String result = new String(score.toString() + "/" + questionRep.countByQuestionSubjectId( subject.getId() ).toString() );
+		
+		model.addAttribute("result", result);
+		model.addAttribute("subject_name", subject.getName());
+		
 		return "resultPage";
 	}
 	

@@ -11,8 +11,4 @@ public class UserTeacher extends User {
 		super(name, password, true);
 	}
 	
-	public void update(boolean isLoggedIn) {
-		this.isLoggedIn = isLoggedIn;
-	}
-	
 }

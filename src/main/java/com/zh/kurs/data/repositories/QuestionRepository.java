@@ -6,4 +6,5 @@ import com.zh.kurs.data.Question;
 
 public interface QuestionRepository extends CrudRepository<Question, Long>{
 	public Iterable<Question> findAllByQuestionSubjectId(Long subject_id); 
+	public Long countByQuestionSubjectId(Long subject_id);
 }

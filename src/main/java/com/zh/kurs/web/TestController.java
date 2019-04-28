@@ -8,6 +8,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -34,12 +35,15 @@ public class TestController {
 		this.subjectRep = subjectRep;
 	}
 	
+	@ModelAttribute(name="user")
+	public User user(@AuthenticationPrincipal User user) {
+		return user;
+	}
 	
 	@GetMapping
 	public String showTestsPage(Model model, @AuthenticationPrincipal User user) {
 		List<Category> categories = new ArrayList<>();
 		catRep.findAll().forEach(x -> categories.add(x));
-		System.out.println(user);
 		model.addAttribute("categories", categories);
 		
 		return "testPage";

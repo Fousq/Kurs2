@@ -27,9 +27,6 @@ public abstract class User implements UserDetails {
 	
 	private String username;
 	private String password;
-	
-	@Transient
-	protected boolean isLoggedIn = false;
 	private boolean isTeacher = false;
 	
 	public User() { }
@@ -44,8 +41,6 @@ public abstract class User implements UserDetails {
 		this.password = password;
 		this.isTeacher = isTeacher;
 	}
-	
-	public abstract void update(boolean isLoggedIn);
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

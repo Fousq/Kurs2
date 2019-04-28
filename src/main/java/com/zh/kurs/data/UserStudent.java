@@ -10,9 +10,5 @@ public class UserStudent extends User {
 	public UserStudent(String username, String password) {
 		super(username, password);
 	}
-	
-	public void update(boolean isLoggedIn) {
-		this.isLoggedIn = isLoggedIn;
-	}
 
 }

@@ -36,7 +36,6 @@ public class RegistrationController {
 	
 	@PostMapping
 	public String processRegistration(RegistrationForm form) {
-		System.out.println(form);
 		userRepo.save(form.toUser(encoder));
 		return "redirect:/login";
 	}
