@@ -13,7 +13,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
 public class Variant {
 	
 	@Id
@@ -26,14 +25,26 @@ public class Variant {
 	@JoinColumn
 	private Question variantQuestion;
 	
+	public Variant(String content, boolean isAnswer, Question question) {
+		this.content = content;
+		this.isAnswer = isAnswer;
+		variantQuestion = question;
+	}
+	
 	public Variant(String content, boolean isAnswer) {
 		this.content = content;
 		this.isAnswer = isAnswer;
 	}
 	
+	public Variant(String content, Question question) {
+		this.content = content;
+		variantQuestion = question;
+	}
+	
 	public Variant(String content) {
 		this.content = content;
 	}
-	
+
+	public Variant() { }
 	
 }

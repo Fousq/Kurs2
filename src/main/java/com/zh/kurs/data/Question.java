@@ -19,7 +19,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
 public class Question {
 	
 	@Id
@@ -39,5 +38,7 @@ public class Question {
 		this.variants = Stream.of(variants).collect(Collectors.toList());
 		this.variants.forEach(x -> x.setVariantQuestion(this));
 	}
+
+	public Question() { }
 	
 }

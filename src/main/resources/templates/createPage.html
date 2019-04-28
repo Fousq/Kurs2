@@ -5,6 +5,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Create Page
+	<form action="#" th:action="@{/create}" method="post" th:object="${creationForm}">
+		<select th:field="*{question.questionSubject}">
+			<optgroup th:each="category : ${sections.keySet()}" th:label="${category.name}">
+				<option th:each="subject : ${sections.get(category)}" th:value="${subject.id}" th:text="${subject.name}"></option>
+			</optgroup>
+		</select>
+		<input type="text" placeholder="Your question" th:field="*{question.content}" />
+		<input type="text" placeholder="Answer 1" th:field="*{variants}" />
+		<input type="text" placeholder="Answer 2" th:field="*{variants}" />
+		<input type="text" placeholder="Answer 3" th:field="*{variants}" />
+		<input type="text" placeholder="Answer 4" th:field="*{variants}" />
+		<input type="text" placeholder="Right answer" th:field="*{rightAnswer}" />
+		<input type="submit" value="Submit" />
+	</form>
 </body>
 </html>

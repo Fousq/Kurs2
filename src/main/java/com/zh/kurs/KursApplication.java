@@ -39,8 +39,6 @@ public class KursApplication {
 							new Subject("rus")
 						}
 				) );
-				userRepo.save(UsersFactory.getInstance().createUser(UserType.STUDENT, "John", "1234"));
-				userRepo.save(UsersFactory.getInstance().createUser(UserType.TEACHER, "Bill", "12345"));
 			}
 		};
 	}
