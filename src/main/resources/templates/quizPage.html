@@ -14,7 +14,7 @@
 
 	<main id="testsMain">
 			<div class="container">
-				<form action="#" th:action="@{/result}" th:object="${userAnswersSheet}" method="post" >
+				<form action="#" th:action="@{'/quiz/' + ${subject_id} }" th:object="${userAnswersSheet}" method="post" >
 				<div class="section" th:each="question : ${sections.keySet()}">
 					<h1 th:text="${question.content}"></h1>
 					<div class="variant" th:each="variant : ${sections.get(question)}">

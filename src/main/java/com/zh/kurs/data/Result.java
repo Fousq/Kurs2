@@ -26,4 +26,10 @@ public class Result {
 	@JoinColumn
 	private Subject subject;
 	
+	public Result(Integer score, User user, Subject subject) {
+		this.score = score;
+		this.user = user;
+		this.subject = subject;
+	}
+	
 }
